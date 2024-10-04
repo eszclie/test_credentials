@@ -1,5 +1,8 @@
 import os
 import streamlit as st
+from azure.ai.ml import MLClient
+from azure.identity import DefaultAzureCredential
+from dotenv import load_dotenv
 
 subscription_id = os.environ["SUBSCRIPTION_ID"]
 resource_group = os.environ["RESOURCE_GROUP"]
