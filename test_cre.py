@@ -8,9 +8,8 @@ subscription_id = os.environ["SUBSCRIPTION_ID"]
 resource_group = os.environ["RESOURCE_GROUP"]
 workspace_name = os.environ["WORKSPACE_NAME"]
 
-print(subscription_id)
-print(resource_group)
-print(workspace_name)
+
+print(DefaultAzureCredential())
 # Create Azure ML client
 ml_client = MLClient(
     credential=DefaultAzureCredential(),
@@ -19,6 +18,7 @@ ml_client = MLClient(
     workspace_name=workspace_name,
 )
 print(ml_client)
+print(ml_client.model)
 model_name = "XGBoost_Model"
 # Get latest version of model
 my_model = ml_client.models.get(model_name, label="latest")
