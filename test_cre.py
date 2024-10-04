@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 
 subscription_id = os.environ["SUBSCRIPTION_ID"]
